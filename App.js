@@ -38,14 +38,7 @@ export default function App() {
     }
 
       let location = await Location.getCurrentPositionAsync({});
-      let {coords} = location;
-      const { latitude, longitude } = coords;
       
-      let response = await Location.reverseGeocodeAsync({
-        latitude,
-        longitude
-      });
-      console.log(response)
 
       fetchDataFromApi(location.coords.latitude, location.coords.longitude);
     
